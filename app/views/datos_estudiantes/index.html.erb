@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-12 w-100">
+      <h1 class="display-4 font-weight-bold text-center">Estudiantes</h1>
+    </div>
+
+    <% if notice %>
+      <div class="col-12 mt-2 w-100">
+        <div class="alert alert-primary" role="alert">
+          <%= notice %>
+        </div>
+      </div>
+    <% end %>
+
+    <%= link_to 'Nuevo estudiante', new_datos_estudiante_path, class: 'btn btn-primary text-white mt-5' %>
+
+    <table class="table mt-5">
+      <thead>
+      <tr>
+        <th scope="col">Nombres</th>
+        <th scope="col">Apellidos</th>
+        <th scope="col">Carrera</th>
+        <th scope="col">Carnet</th>
+        <th scope="col">Acciones</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @datos_estudiantes.each do |datos_estudiante| %>
+        <tr>
+          <td style="font-size: 16px;"><%= datos_estudiante.nombres %></td>
+          <td style="font-size: 16px;"><%= datos_estudiante.apellidos %></td>
+          <td style="font-size: 16px;"><%= datos_estudiante.carrera %></td>
+          <td style="font-size: 16px;"><%= datos_estudiante.carnet %></td>
+          <td>
+            <%= link_to 'Mostrar detalles', datos_estudiante, class: 'btn btn-primary text-white' %>
+            <%= link_to 'Editar', edit_datos_estudiante_path(datos_estudiante), class: 'btn btn-warning text-white' %>
+            <%= link_to 'Eliminar', datos_estudiante, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger text-white' %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+  </div>
+</div>

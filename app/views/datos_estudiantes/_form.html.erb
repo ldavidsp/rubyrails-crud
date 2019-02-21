@@ -1,0 +1,39 @@
+<%= form_with(model: datos_estudiante, class: 'mt-1 w-100', local: true) do |form| %>
+  <% if datos_estudiante.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(datos_estudiante.errors.count, "error") %> prohibited this datos_estudiante from being
+        saved:</h2>
+
+      <ul>
+        <% datos_estudiante.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :nombres, for: 'name', class: 'font-weight-bold' %>
+    <%= form.text_field :nombres, class: 'form-control', id: 'name' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :apellidos, for: 'last_name', class: 'font-weight-bold' %>
+    <%= form.text_field :apellidos, class: 'form-control', id: 'last_name' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :carrera, for: 'carrera', class: 'font-weight-bold' %>
+    <%= form.text_field :carrera, class: 'form-control', id: 'carrera' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :carnet, for: 'carnet', class: 'font-weight-bold' %>
+    <%= form.text_field :carnet, class: 'form-control', id: 'carnet' %>
+  </div>
+
+  <div class="actions w-100 text-center">
+    <%= link_to 'Back', datos_estudiantes_path, class: 'btn btn-link mr-5' %>
+    <%= form.submit class: 'btn btn-primary text-white ml-5' %>
+  </div>
+<% end %>

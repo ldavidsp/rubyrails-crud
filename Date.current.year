@@ -1,0 +1,36 @@
+[WARNING] The model name 'Estudiantes' was recognized as a plural, using the singular 'Estudiante' instead. Override with --force-plural or setup custom inflection rules for this noun before running the generator.
+      invoke  active_record
+      remove    db/migrate/20190221062120_create_estudiantes.rb
+      create    db/migrate/20190221062411_create_estudiantes.rb
+   identical    app/models/estudiante.rb
+      invoke    test_unit
+   identical      test/models/estudiante_test.rb
+       force      test/fixtures/estudiantes.yml
+      invoke  resource_route
+       route    resources :estudiantes
+      invoke  scaffold_controller
+       force    app/controllers/estudiantes_controller.rb
+      invoke    erb
+       exist      app/views/estudiantes
+       force      app/views/estudiantes/index.html.erb
+   identical      app/views/estudiantes/edit.html.erb
+       force      app/views/estudiantes/show.html.erb
+   identical      app/views/estudiantes/new.html.erb
+       force      app/views/estudiantes/_form.html.erb
+      invoke    test_unit
+       force      test/controllers/estudiantes_controller_test.rb
+       force      test/system/estudiantes_test.rb
+      invoke    helper
+   identical      app/helpers/estudiantes_helper.rb
+      invoke      test_unit
+      invoke    jbuilder
+   identical      app/views/estudiantes/index.json.jbuilder
+   identical      app/views/estudiantes/show.json.jbuilder
+       force      app/views/estudiantes/_estudiante.json.jbuilder
+      invoke  assets
+      invoke    coffee
+   identical      app/assets/javascripts/estudiantes.coffee
+      invoke    scss
+   identical      app/assets/stylesheets/estudiantes.scss
+      invoke  scss
+   identical    app/assets/stylesheets/scaffolds.scss
